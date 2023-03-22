@@ -1,0 +1,5 @@
+[target.aarch64-unknown-none-softfloat]
+runner = "qemu-system-aarch64 -cpu cortex-a53 -machine raspi3b -d in_asm  -display none -kernel"
+
+[build]
+target = "aarch64-unknown-none-softfloat"

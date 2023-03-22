@@ -1,0 +1,11 @@
+[target.aarch64-unknown-none-softfloat]
+#linker = "aarch64-none-elf-ld"
+rustflags = ["-C", "target-cpu=cortex-a53", 
+"-C", "link-arg=--library-path=src/bsp/raspberrypi",
+"-C","link-arg=--script=kernel.ld",
+"-D","warnings",
+"-D","missing_docs"] 
+runner = "qemu-system-aarch64 -cpu cortex-a53 -machine raspi3b -serial stdio -display none -kernel"
+
+[build]
+target = "aarch64-unknown-none-softfloat"
